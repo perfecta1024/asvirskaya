@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Andrei Svirski</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover { color: #000; }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 0;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+    .item {
+      margin-bottom: 20px;
+    }
+    .item-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .links a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #0066cc;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 10px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Andrei Svirski — Portfolio</h1>
+    <p>Writer · Editor · Content Specialist</p>
+  </header>
+
+  <button id="burger" style="font-size:24px; position:sticky; top:0; left:10px; margin:10px; background:#fff; border:1px solid #ccc; border-radius:6px; padding:6px 10px; display:none;">☰</button>
+
+<nav id="menu" class="desktop-menu">
+    <a href="#about">About Me</a>
+    <a href="#original">Original Writing</a>
+    <a href="#ai-editing">AI‑Assisted Editing</a>
+    <a href="#web-copy">Website Copy</a>
+    <a href="#editorial">Editorial Projects</a>
+</nav>
+
+<nav id="mobileMenu" class="mobile-menu" style="display:none; position:absolute; right:20px; top:70px; background:#fff; border:1px solid #ddd; padding:15px; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+    <a href="#about">About Me</a>
+    <a href="#original">Original Writing</a>
+    <a href="#ai-editing">AI‑Assisted Editing</a>
+    <a href="#web-copy">Website Copy</a>
+    <a href="#editorial">Editorial Projects</a>
+</nav>
+
+<script>
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function checkWidth() {
+    if (window.innerWidth < 768) {
+      burger.style.display = 'block';
+      document.getElementById('menu').style.display = 'none';
+    } else {
+      burger.style.display = 'none';
+      document.getElementById('menu').style.display = 'flex';
+      mobileMenu.style.display = 'none';
+    }
+  }
+
+  burger.addEventListener('click', () => {
+    mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+  });
+
+  window.addEventListener('resize', checkWidth);
+  window.addEventListener('load', checkWidth);
+</script>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Short bio goes here. You can describe your background, areas of expertise,
+      and what types of writing or editing work you specialize in. This section
+      sets the tone for the rest of your portfolio.
+    </p>
+  </section>
+
+  <section id="original">
+    <h2>Original Writing</h2>
+    <div class="item">
+      <div class="item-title">Title of Piece</div>
+      <p>Short description of the project or article.</p>
+      <div class="links">
+        <a href="#">View Screenshot</a>
+        <a href="#">View PDF</a>
+        <a href="#">Visit Link</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai-editing">
+    <h2>AI‑Assisted Content Editing</h2>
+    <p>Examples of AI‑generated drafts refined, fact‑checked, and edited by me.</p>
+    <div class="item">
+      <div class="item-title">Edited Project Example</div>
+      <div class="links">
+        <a href="#">Before / After PDF</a>
+        <a href="#">Screenshot</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="web-copy">
+    <h2>Website Copy</h2>
+    <div class="item">
+      <div class="item-title">Landing Page Copy</div>
+      <p>Short description of the goal and results.</p>
+      <div class="links">
+        <a href="#">Screenshot</a>
+        <a href="#">Live Site</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="editorial">
+    <h2>Editorial Projects — Revised and Polished by Me</h2>
+    <div class="item">
+      <div class="item-title">Editorial Project Title</div>
+      <p>Brief context and your editing contribution.</p>
+      <div class="links">
+        <a href="#">Download PDF</a>
+        <a href="#">Screenshot</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Andrei Svirski — Portfolio
+  </footer>
+</body>
+</html>
