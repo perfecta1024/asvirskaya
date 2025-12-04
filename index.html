@@ -29,6 +29,7 @@
       border-bottom: 1px solid #ddd;
       position: sticky;
       top: 0;
+	  z-index: 1;
     }
     nav a {
       color: #333;
@@ -81,7 +82,6 @@
 	    display: flex;
 		justify-content: center;
 		align-items: center;      /* horizontal centering */
-        //text-align: center;  
 	}
 	.avatar-wrap {
 	  width: 150px;
@@ -107,16 +107,30 @@
 		border-radius:6px; 
 		padding:6px 10px; 
 		display:none;
+		z-index: 1;
 	}
 	.mobile-menu {
 		display:none; 
-		position:sticky; 
+		position: fixed; 
 		top:60px; 
 		background:#fff; 
 		border:1px solid #ddd; 
 		padding:15px; 
 		border-radius:8px; 
 		box-shadow:0 4px 10px rgba(0,0,0,0.1);
+	}
+	.mobile-menu.open {
+		transform: translateX(0);
+	}
+	
+	.reveal {
+	  opacity: 0;
+	  transform: translateY(30px);
+	  transition: all 0.6s ease;
+	}
+	.reveal.active {
+	  opacity: 1;
+	  transform: translateY(0);
 	}
 	
 	
@@ -138,47 +152,24 @@
 
   <button id="burger">☰</button>
 
-<nav id="menu" class="desktop-menu">
-    <a href="#about">About Me</a>
-    <a href="#original">Materials Prepared for LinkBuilding</a>
-    <a href="#web-copy">SEO-Optimized Product Descriptions</a>
-	<a href="#ai-editing">AI‑Assisted Editing</a>
-    <a href="#editorial">Editorial Projects</a>
-</nav>
+	<nav id="menu" class="desktop-menu">
+		<a href="#about">About Me</a>
+		<a href="#original">Materials Prepared for LinkBuilding</a>
+		<a href="#web-copy">SEO-Optimized Product Descriptions</a>
+		<a href="#ai-editing">AI‑Assisted Editing</a>
+		<a href="#editorial">Editorial Projects</a>
+	</nav>
 
-<nav id="mobileMenu" class="mobile-menu">
-    <p><a href="#about">About Me</a></p>
-    <p><a href="#original">Materials Prepared for LinkBuilding</a></p>
-	<p><a href="#web-copy">SEO-Optimized Product Descriptions</a></p>
-    <p><a href="#ai-editing">AI‑Assisted Editing</a></p>
-    <p><a href="#editorial">Editorial Projects</a></p>
-</nav>
+	<nav id="mobileMenu" class="mobile-menu">
+		<p><a href="#about">About Me</a></p>
+		<p><a href="#original">Materials Prepared for LinkBuilding</a></p>
+		<p><a href="#web-copy">SEO-Optimized Product Descriptions</a></p>
+		<p><a href="#ai-editing">AI‑Assisted Editing</a></p>
+		<p><a href="#editorial">Editorial Projects</a></p>
+	</nav>
 
-<script>
-  const burger = document.getElementById('burger');
-  const desktopMenu = document.getElementById('menu');
-  const mobileMenu = document.getElementById('mobileMenu');
 
-  function checkWidth() {
-    if (window.innerWidth < 768) {
-      burger.style.display = 'block';
-      desktopMenu.style.display = 'none';
-    } else {
-      burger.style.display = 'none';
-      desktopMenu.style.display = 'flex';
-      mobileMenu.style.display = 'none';
-    }
-  }
-
-  burger.addEventListener('click', () => {
-    mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
-  });
-
-  window.addEventListener('resize', checkWidth);
-  window.addEventListener('load', checkWidth);
-</script>
-
-  <section id="about">
+  <section class="reveal" id="about">
     <h2>About Me</h2>
     
 	<div class="flex-block">
@@ -209,7 +200,7 @@
 
 
 
-  <section id="original">
+  <section class="reveal" id="original">
     <h2>Materials Prepared for LinkBuilding</h2>
     <div class="item">
       <div class="item-title">
@@ -242,7 +233,7 @@
 
 
 
-  <section id="web-copy">
+  <section class="reveal" id="web-copy">
     <h2>SEO-Optimized Product Descriptions</h2>
     <div class="item">
       <div class="item-title"></div>
@@ -257,7 +248,7 @@
   
 
 
-  <section id="ai-editing">
+  <section class="reveal" id="ai-editing">
     <h2>AI‑Assisted Content Editing</h2>
     <p>Examples of AI‑generated drafts refined, fact‑checked, and edited by me.</p>
 
@@ -306,7 +297,7 @@
 
 
 
-  <section id="editorial">
+  <section class="reveal" id="editorial">
     <h2>Editorial Projects — Revised and Polished by Me</h2>
 	
 	<div class="item">
@@ -355,5 +346,52 @@
   <footer>
     © 2025 Anastasiya Svirskaya — Portfolio
   </footer>
+  
+  <script>
+	  const burger = document.getElementById('burger');
+	  const desktopMenu = document.getElementById('menu');
+	  const mobileMenu = document.getElementById('mobileMenu');
+
+	  function checkWidth() {
+		if (window.innerWidth < 768) {
+		  burger.style.display = 'block';
+		  desktopMenu.style.display = 'none';
+		} else {
+		  burger.style.display = 'none';
+		  desktopMenu.style.display = 'flex';
+		  mobileMenu.style.display = 'none';
+		}
+	  }
+
+		window.addEventListener('click', function (event) {
+		  const clickInside = mobileMenu.contains(event.target);
+		  const clickInsideBurger = burger.contains(event.target);
+		  
+		  // If menu is open and click is outside → close it
+		  if (!clickInside && mobileMenu.classList.contains('open') && !clickInsideBurger) {
+			mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+			mobileMenu.classList.toggle('open');
+		  }
+		});
+
+	  burger.addEventListener('click', () => {
+		mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+		mobileMenu.classList.toggle('open');
+	  });
+
+	  window.addEventListener('resize', checkWidth);
+	  window.addEventListener('load', checkWidth);
+	  
+		const reveals = document.querySelectorAll('.reveal');
+	  const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+		  if (entry.isIntersecting) {
+			entry.target.classList.add('active');
+		  }
+		});
+	  }, { threshold: 0.15 });
+
+	  reveals.forEach(el => observer.observe(el));
+	</script>
 </body>
 </html>
