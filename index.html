@@ -6,16 +6,39 @@
   <title>Portfolio — Anastasiya Svirskaya</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.ico">
   <style>
+	  :root {
+		  --bg: #f5f5f5;
+		  --text: #222;
+		  --card-bg: #fff;
+		  --border: #ddd;
+		  --header-bg: #6373DC;
+		  --nav-bg: #fff;
+		  --nav-text: #333;
+		  --link: #0066cc;
+		}
+
+		[data-theme="dark"] {
+		  --bg: #121212;
+		  --text: #eee;
+		  --card-bg: #1d1d1d;
+		  --border: #333;
+		  --header-bg: #4c59b7;
+		  --nav-bg: #1a1a1a;
+		  --nav-text: #eee;
+		  --link: #8ab4ff;
+		}
+  
     body {
       font-family: Euclid, -apple-system, blinkmacsystemfont, "segoe ui", roboto, helvetica, arial, sans-serif, "Cormorant Garamond", serif;
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
-      color: #222;
+      background: var(--bg);
+	  color: var(--text);
+	  transition: background 0.3s, color 0.3s;
       line-height: 1.6;
     }
     header {
-      background: #6373DC;
+      background: var(--header-bg);
       color: #fff;
       padding: 20px;
       text-align: center;
@@ -25,17 +48,17 @@
       justify-content: center;
       gap: 20px;
       padding: 15px;
-      background: #fff;
-      border-bottom: 1px solid #ddd;
+      background: var(--nav-bg);
+	  border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
 	  z-index: 1;
     }
     nav a {
-      color: #333;
+      color: var(--link);
       text-decoration: none;
     }
-    nav a:hover { color: #000; }
+    nav a:hover { color: var(--nav-text); }
 
 	.desktop-menu {
 		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -48,10 +71,11 @@
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
-      background: #fff;
+      background: var(--card-bg);
+	  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+	  border: 1px solid var(--border);
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     h2 {
       margin-top: 0;
@@ -69,7 +93,7 @@
     .links a {
       display: inline-block;
       margin-right: 10px;
-      color: #0066cc;
+      color: var(--link);
       text-decoration: none;
     }
     footer {
@@ -138,6 +162,22 @@
 	  transform: translateY(0);
 	}
 	
+	#themeToggle {
+	  //position: fixed;
+	  //right: 20px;
+	  //bottom: 20px;
+	  float: right;
+	  margin-right: 4em;
+	  padding: 10px 14px;
+	  font-size: 14px;
+	  border-radius: 6px;
+	  border: 1px solid var(--border);
+	  background: var(--card-bg);
+	  color: var(--text);
+	  cursor: pointer;
+	  //z-index: 100;
+	  transition: background 0.3s, color 0.3s;
+	}
 	
 	
 	@media (max-width: 768px) {
@@ -153,6 +193,7 @@
   <header>
     <h1>Anastasiya Svirskaya — Portfolio</h1>
     <p>Content Manager · Copywriter · SEO and Digital Content Specialist</p>
+    <p>✉ perfecta1024@gmail.com</p>
   </header>
 
   <button id="burger">☰</button>
@@ -182,22 +223,24 @@
 			<img class="avatar" src="./docs/avatar.png">
 		</div>
 	  <p style="margin-top:8px; margin-bottom:18px; line-height:1.6;">
-        I’m a Content and SEO Specialist with over two years of experience managing and optimizing digital content for company websites and blogs. I combine creativity with data-driven SEO techniques to produce high-quality, engaging, and search-friendly materials.
+        Hi, I’m a Content and SEO Specialist with over two years of experience managing and optimizing digital content for company websites and blogs. I combine creativity with data-driven SEO techniques to produce high-quality, engaging, and search-friendly materials.
       </p>
 	</div>  
 
   <h2 style="margin:0 0 10px 0; font-size:18px; border-bottom:1px solid #eee; padding-bottom:8px;">Experience highlights</h2>
-  <ul style="margin:14px 0 18px 20px; line-height:1.6; color:#333;">
+  <ul style="margin:14px 0 18px 20px; line-height:1.6;">
     <li>Managing a company blog on WordPress</li>
     <li>Conducting keyword research and content audits</li>
 	<li>Creating original, SEO-friendly texts</li>
     <li>Editing AI- and human-written texts for clarity, tone, and SEO</li>
     <li>Building backlinks and monitoring performance with SEO tools</li>
   </ul>
+    <p>Main tools: Google Workspace, SurferSEO, Ahrefs, Originality.ai.<p>
 
   <h2 style="margin:0 0 10px 0; font-size:18px; border-bottom:1px solid #eee; padding-bottom:8px;">Approach &amp; interests</h2>
-  <p style="margin:12px 0 20px 0; line-height:1.6; color:#333;">
+  <p style="margin:12px 0 20px 0; line-height:1.6;">
     I value strong, well-structured communication and enjoy using technology to improve how content performs. Better rankings, higher engagement, and messages that resonate with the audience are what I aim for.
+	
   </p> 
 
     
@@ -352,6 +395,8 @@
     </div>
   </section>
 
+	<button id="themeToggle">🌙 Dark Mode</button>
+
   <footer>
     © 2025 Anastasiya Svirskaya — Portfolio
   </footer>
@@ -401,6 +446,28 @@
 	  }, { threshold: 0.15 });
 
 	  reveals.forEach(el => observer.observe(el));
+	  
+	  
+	  // THEME TOGGLE
+		const themeToggle = document.getElementById('themeToggle');
+		const currentTheme = localStorage.getItem('theme');
+
+		if (currentTheme) {
+		  document.documentElement.setAttribute('data-theme', currentTheme);
+		  themeToggle.textContent = currentTheme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
+		}
+
+		themeToggle.addEventListener("click", () => {
+		  let theme = document.documentElement.getAttribute("data-theme") === "dark"
+			? "light"
+			: "dark";
+
+		  document.documentElement.setAttribute("data-theme", theme);
+		  localStorage.setItem("theme", theme);
+
+		  themeToggle.textContent = theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
+		});
+
 	</script>
 </body>
 </html>
