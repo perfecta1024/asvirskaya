@@ -6,35 +6,35 @@
   <title>Portfolio — Anastasiya Svirskaya</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.ico">
   <style>
-	  :root {
-		  --bg: #f5f5f5;
-		  --text: #222;
-		  --card-bg: #fff;
-		  --border: #ddd;
-		  --header-bg: #6373DC;
-		  --nav-bg: #fff;
-		  --nav-text: #333;
-		  --link: #0066cc;
-		}
+      :root {
+          --bg: #f5f5f5;
+          --text: #222;
+          --card-bg: #fff;
+          --border: #ddd;
+          --header-bg: #6373DC;
+          --nav-bg: #fff;
+          --nav-text: #333;
+          --link: #0066cc;
+        }
 
-		[data-theme="dark"] {
-		  --bg: #121212;
-		  --text: #eee;
-		  --card-bg: #1d1d1d;
-		  --border: #333;
-		  --header-bg: #4c59b7;
-		  --nav-bg: #1a1a1a;
-		  --nav-text: #eee;
-		  --link: #8ab4ff;
-		}
+        [data-theme="dark"] {
+          --bg: #121212;
+          --text: #eee;
+          --card-bg: #1d1d1d;
+          --border: #333;
+          --header-bg: #4c59b7;
+          --nav-bg: #1a1a1a;
+          --nav-text: #eee;
+          --link: #8ab4ff;
+        }
   
     body {
       font-family: Euclid, -apple-system, blinkmacsystemfont, "segoe ui", roboto, helvetica, arial, sans-serif, "Cormorant Garamond", serif;
       margin: 0;
       padding: 0;
       background: var(--bg);
-	  color: var(--text);
-	  transition: background 0.3s, color 0.3s;
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
       line-height: 1.6;
     }
     header {
@@ -49,10 +49,10 @@
       gap: 20px;
       padding: 15px;
       background: var(--nav-bg);
-	  border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-	  z-index: 1;
+      z-index: 1;
     }
     nav a {
       color: var(--link);
@@ -60,20 +60,19 @@
     }
     nav a:hover { color: var(--nav-text); }
 
-	.desktop-menu {
-		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-	}  
-	.desktop-menu a {
-		margin: 0 0.6em;
-	} 
+    .desktop-menu {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }  
+    .desktop-menu a {
+        margin: 0 0.6em;
+    } 
 
     section {
       max-width: 900px;
       margin: 40px auto;
-      padding: 0 20px;
       background: var(--card-bg);
-	  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-	  border: 1px solid var(--border);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border: 1px solid var(--border);
       padding: 30px;
       border-radius: 10px;
     }
@@ -101,91 +100,88 @@
       padding: 40px 10px;
       color: #666;
     }
-	
-	.flex-block {
-	    display: flex;
-		justify-content: center;
-		align-items: center;      /* horizontal centering */
-	}
-	/*
-	.avatar-wrap {
-	  width: 150px;
-	  min-width: 150px;
-	  height: 150px;
-	  background: gray;
-	  border-radius: 50%;
-	  overflow: hidden;
-	  margin: 1em;
-	}
-	*/
-	.avatar {
-		width: 165px;
-		//margin-top: -25px;
-		//margin-left: -15px;
-		margin-right: 10px;
-	}
-	
-	#burger {
-		font-size:24px; 
-		position:sticky; 
-		top:10px; 
-		left:10px; 
-		margin:10px; 
-		background:#fff; 
-		border:1px solid #ccc; 
-		border-radius:6px; 
-		padding:6px 10px; 
-		display:none;
-		z-index: 1;
-	}
-	.mobile-menu {
-		display:none; 
-		position: fixed; 
-		top:60px; 
-		background:#fff; 
-		border:1px solid #ddd; 
-		padding:15px; 
-		border-radius:8px; 
-		box-shadow:0 4px 10px rgba(0,0,0,0.1);
-	}
-	.mobile-menu.open {
-		transform: translateX(0);
-	}
-	
-	.reveal {
-	  opacity: 0;
-	  transform: translateY(30px);
-	  transition: all 0.6s ease;
-	}
-	.reveal.active {
-	  opacity: 1;
-	  transform: translateY(0);
-	}
-	
-	#themeToggle {
-	  //position: fixed;
-	  //right: 20px;
-	  //bottom: 20px;
-	  float: right;
-	  margin-right: 4em;
-	  padding: 10px 14px;
-	  font-size: 14px;
-	  border-radius: 6px;
-	  border: 1px solid var(--border);
-	  background: var(--card-bg);
-	  color: var(--text);
-	  cursor: pointer;
-	  //z-index: 100;
-	  transition: background 0.3s, color 0.3s;
-	}
-	
-	
-	@media (max-width: 768px) {
-		.flex-block {
-			flex-direction: column;
-		}
-	}
-	
+    
+    .flex-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;      /* horizontal centering */
+    }
+
+    .avatar-wrap {
+      width: 150px;
+      min-width: 150px;
+      height: 150px;
+      background: gray;
+      border-radius: 50%;
+      overflow: hidden;
+      padding: 0;
+      margin: 1em;
+    }
+
+    .avatar {
+        width: 165px;
+        margin-top: -5px;
+        margin-left: -7px;
+        margin-right: 10px;
+    }
+    
+    #burger {
+        font-size:24px; 
+        position:sticky; 
+        top:10px; 
+        left:10px; 
+        margin:10px; 
+        background:#fff; 
+        border:1px solid #ccc; 
+        border-radius:6px; 
+        padding:6px 10px; 
+        display:none;
+        z-index: 1;
+    }
+    .mobile-menu {
+        display:none; 
+        position: fixed; 
+        top:60px; 
+        background:#fff; 
+        border:1px solid #ddd; 
+        padding:15px; 
+        border-radius:8px; 
+        box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+    .mobile-menu.open {
+        transform: translateX(0);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    #themeToggle {
+      float: right;
+      margin-right: 4em;
+      padding: 10px 14px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+    
+    
+    @media (max-width: 768px) {
+        .flex-block {
+            flex-direction: column;
+        }
+    }
+    
 
   </style>
 </head>
@@ -198,40 +194,40 @@
 
   <button id="burger">☰</button>
 
-	<nav id="menu" class="desktop-menu">
-		<a href="#about">About Me</a>
-		<a href="#original">Materials Prepared for Link Building</a>
-		<a href="#web-copy">SEO-Optimized Product Descriptions</a>
-		<a href="#ai-editing">Editing of AI-Assisted Content</a>
-		<a href="#editorial">Polished Author Drafts</a>
-	</nav>
+    <nav id="menu" class="desktop-menu">
+        <a href="#about">About Me</a>
+        <a href="#original">Materials Prepared for Link Building</a>
+        <a href="#web-copy">SEO-Optimized Product Descriptions</a>
+        <a href="#ai-editing">Editing of AI-Assisted Content</a>
+        <a href="#editorial">Polished Author Drafts</a>
+    </nav>
 
-	<nav id="mobileMenu" class="mobile-menu">
-		<p><a href="#about">About Me</a></p>
-		<p><a href="#original">Materials Prepared for Link Building</a></p>
-		<p><a href="#web-copy">SEO-Optimized Product Descriptions</a></p>
-		<p><a href="#ai-editing">Editing of AI-Assisted Content</a></p>
-		<p><a href="#editorial">Polished Author Drafts</a></p>
-	</nav>
+    <nav id="mobileMenu" class="mobile-menu">
+        <p><a href="#about">About Me</a></p>
+        <p><a href="#original">Materials Prepared for Link Building</a></p>
+        <p><a href="#web-copy">SEO-Optimized Product Descriptions</a></p>
+        <p><a href="#ai-editing">Editing of AI-Assisted Content</a></p>
+        <p><a href="#editorial">Polished Author Drafts</a></p>
+    </nav>
 
 
   <section class="reveal" id="about">
     <h2>About Me</h2>
     
-	<div class="flex-block">
-		<div class="avatar-wrap">
-			<img class="avatar" src="./docs/avatar.png">
-		</div>
-	  <p style="margin-top:8px; margin-bottom:18px; line-height:1.6;">
+    <div class="flex-block">
+        <div class="avatar-wrap">
+            <img class="avatar" src="./docs/avatar.png" alt="avatar">
+        </div>
+      <p style="margin-top:8px; margin-bottom:18px; line-height:1.6;">
         Hi, I’m a Content and SEO Specialist with over two years of experience managing and optimizing digital content for company websites and blogs. I combine creativity with data-driven SEO techniques to produce high-quality, engaging, and search-friendly materials.
       </p>
-	</div>  
+    </div>  
 
   <h2 style="margin:0 0 10px 0; font-size:18px; border-bottom:1px solid #eee; padding-bottom:8px;">Experience highlights</h2>
   <ul style="margin:14px 0 18px 20px; line-height:1.6;">
     <li>Managing a company blog on WordPress</li>
     <li>Conducting keyword research and content audits</li>
-	<li>Creating original, SEO-friendly texts</li>
+    <li>Creating original, SEO-friendly texts</li>
     <li>Editing AI- and human-written texts for clarity, tone, and SEO</li>
     <li>Building backlinks and monitoring performance with SEO tools</li>
   </ul>
@@ -240,10 +236,7 @@
   <h2 style="margin:0 0 10px 0; font-size:18px; border-bottom:1px solid #eee; padding-bottom:8px;">Approach &amp; interests</h2>
   <p style="margin:12px 0 20px 0; line-height:1.6;">
     I value strong, well-structured communication and enjoy using technology to improve how content performs. Better rankings, higher engagement, and messages that resonate with the audience are what I aim for.
-	
-  </p> 
-
-    
+  </p>
   </section>
 
 
@@ -251,31 +244,31 @@
 
   <section class="reveal" id="original">
     <h2>Materials Prepared for Link Building</h2>
-	<p>Examples of articles prepared by me for link-building purposes</p>
+    <p>Examples of articles prepared by me for link-building purposes</p>
     <div class="item">
       <div class="item-title">
-	  </div>
+      </div>
       <p></p>
       <div class="links">
-	  	<p><a href="./docs/Creative Brand Strategies_ 5 Examples of Social Media Marketing Done Right.pdf" target="_blank">
-		    Creative Brand Strategies: 5 Examples of Social Media Marketing Done Right
-		</a></p>
-		
-		<p><a href="./docs/Face_to_Face_vs_Digital_Communication_Which_Is_the_Healthier_Choice.pdf" target="_blank">
-		    Face-to-Face vs. Digital Communication: Which Is the Healthier Choice?
-		</a></p>
-		
-		<p><a href="./docs/How Can Technology Help Identify Unknown Callers.pdf" target="_blank">
-		    How Can Technology Help Identify Unknown Callers?
-		</a></p>
-		
-		<p><a href="./docs/How Strong Passwords Prevent Data Breaches in Remote Teams.pdf" target="_blank">
-		    How Strong Passwords Prevent Data Breaches in Remote Teams
-		</a></p>
-		
-		<p><a href="./docs/Steps to Effective Networking in the Tech Sector.pdf" target="_blank">
-		    Steps to Effective Networking in the Tech Sector
-		</a></p>
+          <p><a href="./docs/Creative Brand Strategies_ 5 Examples of Social Media Marketing Done Right.pdf" target="_blank">
+            Creative Brand Strategies: 5 Examples of Social Media Marketing Done Right
+        </a></p>
+        
+        <p><a href="./docs/Face_to_Face_vs_Digital_Communication_Which_Is_the_Healthier_Choice.pdf" target="_blank">
+            Face-to-Face vs. Digital Communication: Which Is the Healthier Choice?
+        </a></p>
+        
+        <p><a href="./docs/How Can Technology Help Identify Unknown Callers.pdf" target="_blank">
+            How Can Technology Help Identify Unknown Callers?
+        </a></p>
+        
+        <p><a href="./docs/How Strong Passwords Prevent Data Breaches in Remote Teams.pdf" target="_blank">
+            How Strong Passwords Prevent Data Breaches in Remote Teams
+        </a></p>
+        
+        <p><a href="./docs/Steps to Effective Networking in the Tech Sector.pdf" target="_blank">
+            Steps to Effective Networking in the Tech Sector
+        </a></p>
 
       </div>
     </div>
@@ -285,14 +278,14 @@
 
   <section class="reveal" id="web-copy">
     <h2>SEO-Optimized Product Descriptions</h2>
-	<p>Examples of product descriptions optimized for search engines</p>
+    <p>Examples of product descriptions optimized for search engines</p>
     <div class="item">
       <div class="item-title"></div>
       <p></p>
       <div class="links">
-		<p><a href="./docs/SEO-Optimized Product Descriptions.pdf" target="_blank">
-		    SEO-Optimized Product Descriptions
-		</a></p>
+        <p><a href="./docs/SEO-Optimized Product Descriptions.pdf" target="_blank">
+            SEO-Optimized Product Descriptions
+        </a></p>
       </div>
     </div>
   </section>
@@ -305,43 +298,43 @@
 
     <div class="item">
       <div class="item-title">
-		How to Turn Off Tracking on iPhone and Android for Enhanced Privacy
-	  </div>
-	  <p>
-		This comprehensive guide provides practical steps for managing privacy settings on iOS and Android devices, including disabling location services for specific apps, limiting ad tracking, and utilizing privacy controls such as VPNs.
-	  </p>
+        How to Turn Off Tracking on iPhone and Android for Enhanced Privacy
+      </div>
+      <p>
+        This comprehensive guide provides practical steps for managing privacy settings on iOS and Android devices, including disabling location services for specific apps, limiting ad tracking, and utilizing privacy controls such as VPNs.
+      </p>
       <div class="links">
-		<p><a href="https://nuwber.com/blog/how-to-turn-off-tracking-on-iphone-and-android-for-enhanced-privacy/" target="_blank">
-		    Link to Article
-		</a></p>
+        <p><a href="https://nuwber.com/blog/how-to-turn-off-tracking-on-iphone-and-android-for-enhanced-privacy/" target="_blank">
+            Link to Article
+        </a></p>
       </div>
     </div>
-	
-	<div class="item">
+    
+    <div class="item">
       <div class="item-title">
-		How Strong Is My Password? The Ultimate Guide to Password Security
-	  </div>
-	  <p>
-		Wondering if your password is secure? Discover the essentials of password strength, password checker tools, and best practices for creating, storing, and updating secure passwords.
-	  </p>
+        How Strong Is My Password? The Ultimate Guide to Password Security
+      </div>
+      <p>
+        Wondering if your password is secure? Discover the essentials of password strength, password checker tools, and best practices for creating, storing, and updating secure passwords.
+      </p>
       <div class="links">
-		<p><a href="https://nuwber.com/blog/how-strong-is-my-password-the-ultimate-guide-to-password-security/" target="_blank">
-		    Link to Article
-		</a></p>
+        <p><a href="https://nuwber.com/blog/how-strong-is-my-password-the-ultimate-guide-to-password-security/" target="_blank">
+            Link to Article
+        </a></p>
       </div>
     </div>
-	
-	<div class="item">
+    
+    <div class="item">
       <div class="item-title">
-		How to Detect and Stop AI Voice Cloning Scams
-	  </div>
-	  <p>
-		This guide helps you understand and combat the growing threat of AI scams, particularly those involving voice cloning technology.
-	  </p>
+        How to Detect and Stop AI Voice Cloning Scams
+      </div>
+      <p>
+        This guide helps you understand and combat the growing threat of AI scams, particularly those involving voice cloning technology.
+      </p>
       <div class="links">
-		<p><a href="https://nuwber.com/blog/how-to-detect-and-stop-an-ai-scammer/" target="_blank">
-		    Link to Article
-		</a></p>
+        <p><a href="https://nuwber.com/blog/how-to-detect-and-stop-an-ai-scammer/" target="_blank">
+            Link to Article
+        </a></p>
       </div>
     </div>
   </section>
@@ -350,124 +343,124 @@
 
   <section class="reveal" id="editorial">
     <h2>Polished Author Drafts</h2>
-	<p>Examples of author drafts revised and polished by me</p>
-	
-	<div class="item">
+    <p>Examples of author drafts revised and polished by me</p>
+    
+    <div class="item">
       <div class="item-title">
-		Preventing Smishing Attacks: What You Need to Know
-	  </div>
-	  <p>
-		This guide unpacks the rising threat of smishing. It details its mechanisms, the dangers it poses to personal and business data, and methods to protect against these deceptive text message scams.
-	  </p>
+        Preventing Smishing Attacks: What You Need to Know
+      </div>
+      <p>
+        This guide unpacks the rising threat of smishing. It details its mechanisms, the dangers it poses to personal and business data, and methods to protect against these deceptive text message scams.
+      </p>
       <div class="links">
-		<p><a href="https://nuwber.com/blog/the-anatomy-of-a-smishing-attack-what-you-need-to-know/" target="_blank">
-		    Link to Article
-		</a></p>
+        <p><a href="https://nuwber.com/blog/the-anatomy-of-a-smishing-attack-what-you-need-to-know/" target="_blank">
+            Link to Article
+        </a></p>
       </div>
     </div>
-	
-	<div class="item">
+    
+    <div class="item">
       <div class="item-title">
-		Publicly Available Information: Legal and Ethical Considerations
-	  </div>
-	  <p>
-		The article discusses the concept of publicly available information, its legal and ethical usage, and ways to manage your public data footprint.
-	  </p>
+        Publicly Available Information: Legal and Ethical Considerations
+      </div>
+      <p>
+        The article discusses the concept of publicly available information, its legal and ethical usage, and ways to manage your public data footprint.
+      </p>
       <div class="links">
-		<p><a href="https://nuwber.com/blog/publicly-available-information-legal-and-ethical-considerations/" target="_blank">
-		    Link to Article
-		</a></p>
+        <p><a href="https://nuwber.com/blog/publicly-available-information-legal-and-ethical-considerations/" target="_blank">
+            Link to Article
+        </a></p>
       </div>
     </div>
-	
-	<div class="item">
+    
+    <div class="item">
       <div class="item-title">
-		Top Threats From the FBI’s 2023 Cybercrime Report and How to Protect Yourself
-	  </div>
-	  <p>
-		Protect your sensitive information from the top cyber threats as reported by the FBI. Awareness, education, and good habits are key to reducing your risk from cybercrime.
-	  </p>
+        Top Threats From the FBI’s 2023 Cybercrime Report and How to Protect Yourself
+      </div>
+      <p>
+        Protect your sensitive information from the top cyber threats as reported by the FBI. Awareness, education, and good habits are key to reducing your risk from cybercrime.
+      </p>
       <div class="links">
-		<p><a href="https://nuwber.com/blog/fbis-2023-cybercrime-report-protect-yourself-against-these-top-threats/" target="_blank">
-		    Link to Article
-		</a></p>
+        <p><a href="https://nuwber.com/blog/fbis-2023-cybercrime-report-protect-yourself-against-these-top-threats/" target="_blank">
+            Link to Article
+        </a></p>
       </div>
     </div>
   </section>
 
-	<button id="themeToggle">🌙 Dark Mode</button>
+    <button id="themeToggle">🌙 Dark Mode</button>
 
   <footer>
     © 2025 Anastasiya Svirskaya — Portfolio
   </footer>
   
   <script>
-	  const burger = document.getElementById('burger');
-	  const desktopMenu = document.getElementById('menu');
-	  const mobileMenu = document.getElementById('mobileMenu');
+      const burger = document.getElementById('burger');
+      const desktopMenu = document.getElementById('menu');
+      const mobileMenu = document.getElementById('mobileMenu');
 
-	  function checkWidth() {
-		if (window.innerWidth < 768) {
-		  burger.style.display = 'block';
-		  desktopMenu.style.display = 'none';
-		} else {
-		  burger.style.display = 'none';
-		  desktopMenu.style.display = 'flex';
-		  mobileMenu.style.display = 'none';
-		}
-	  }
+      function checkWidth() {
+        if (window.innerWidth < 768) {
+          burger.style.display = 'block';
+          desktopMenu.style.display = 'none';
+        } else {
+          burger.style.display = 'none';
+          desktopMenu.style.display = 'flex';
+          mobileMenu.style.display = 'none';
+        }
+      }
 
-		window.addEventListener('click', function (event) {
-		  const clickInside = mobileMenu.contains(event.target);
-		  const clickInsideBurger = burger.contains(event.target);
-		  
-		  // If menu is open and click is outside → close it
-		  if (!clickInside && mobileMenu.classList.contains('open') && !clickInsideBurger) {
-			mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
-			mobileMenu.classList.toggle('open');
-		  }
-		});
+        window.addEventListener('click', function (event) {
+          const clickInside = mobileMenu.contains(event.target);
+          const clickInsideBurger = burger.contains(event.target);
+          
+          // If menu is open and click is outside → close it
+          if (!clickInside && mobileMenu.classList.contains('open') && !clickInsideBurger) {
+            mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+            mobileMenu.classList.toggle('open');
+          }
+        });
 
-	  burger.addEventListener('click', () => {
-		mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
-		mobileMenu.classList.toggle('open');
-	  });
+      burger.addEventListener('click', () => {
+        mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+        mobileMenu.classList.toggle('open');
+      });
 
-	  window.addEventListener('resize', checkWidth);
-	  window.addEventListener('load', checkWidth);
-	  
-		const reveals = document.querySelectorAll('.reveal');
-	  const observer = new IntersectionObserver((entries) => {
-		entries.forEach(entry => {
-		  if (entry.isIntersecting) {
-			entry.target.classList.add('active');
-		  }
-		});
-	  }, { threshold: 0.15 });
+      window.addEventListener('resize', checkWidth);
+      window.addEventListener('load', checkWidth);
+      
+        const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.15 });
 
-	  reveals.forEach(el => observer.observe(el));
-	  
-	  
-	  // THEME TOGGLE
-		const themeToggle = document.getElementById('themeToggle');
-		const currentTheme = localStorage.getItem('theme');
+      reveals.forEach(el => observer.observe(el));
+      
+      
+      // THEME TOGGLE
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme');
 
-		if (currentTheme) {
-		  document.documentElement.setAttribute('data-theme', currentTheme);
-		  themeToggle.textContent = currentTheme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
-		}
+        if (currentTheme) {
+          document.documentElement.setAttribute('data-theme', currentTheme);
+          themeToggle.textContent = currentTheme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
+        }
 
-		themeToggle.addEventListener("click", () => {
-		  let theme = document.documentElement.getAttribute("data-theme") === "dark"
-			? "light"
-			: "dark";
+        themeToggle.addEventListener("click", () => {
+          let theme = document.documentElement.getAttribute("data-theme") === "dark"
+            ? "light"
+            : "dark";
 
-		  document.documentElement.setAttribute("data-theme", theme);
-		  localStorage.setItem("theme", theme);
+          document.documentElement.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
 
-		  themeToggle.textContent = theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
-		});
+          themeToggle.textContent = theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
+        });
 
-	</script>
+    </script>
 </body>
 </html>
